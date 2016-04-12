@@ -17,7 +17,7 @@
                 <br>
                 <div class="form-horizontal" id="record">
                     <div class="form-group">
-                        <form action="con.php" method="post">
+                        <form action="conn.php" method="post">
                             <label for="inputEmail3" class="col-sm-2 control-label">姓名或部门职位</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" id="rNum" placeholder="请输入姓名或部门职位" name="department">
