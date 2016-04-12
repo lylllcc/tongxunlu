@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>通讯录</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h2>中国石油大学(华东)通讯录</h2>
-    <form action="con.php" method="post">
-        <input type="text" placeholder="请输入姓名或部门" name="department"><br>
-        <input type="submit" value="查询">
-    </form>
+    <div id="container" class="container">
+        <h1><strong>中国石油大学(华东)通讯录</strong></h1><br>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <br>
+                <div class="form-horizontal" id="record">
+                    <div class="form-group">
+                        <form action="con.php" method="post">
+                            <label for="inputEmail3" class="col-sm-2 control-label">姓名或部门职位</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="rNum" placeholder="请输入姓名或部门职位" name="department">
+                            </div>
+                            <br><br>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <button id="submitr" class="btn btn-default">查询</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <footer class="text-center">
+                <p>Powered by upcyiban</p>
+            </footer>
+        </div>
+    </div>
 
 </body>
 </html>
