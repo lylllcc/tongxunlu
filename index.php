@@ -20,12 +20,12 @@
                         <form action="conn.php" method="post">
                             <label for="inputEmail3" class="col-sm-2 control-label">姓名或部门职位</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="rNum" placeholder="请输入姓名或部门职位" name="department">
+                                <input type="text" class="form-control"  placeholder="请输入姓名或部门职位" name="department">
                             </div>
                             <br><br>
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <button id="submitr" class="btn btn-default">查询</button>
+                                    <button  class="btn btn-default">查询</button>
                                 </div>
                             </div>
                         </form>

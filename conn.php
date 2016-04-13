@@ -24,10 +24,10 @@
                         die("connection error".$con->connect_error);
                     }
                     $con->set_charset("utf8");
-                    $query = "SELECT * FROM adressbook WHERE department LIKE '%".$_REQUEST["department"]."%'";
+                    $query = "SELECT * FROM adressbooks WHERE department LIKE '%".$_REQUEST["department"]."%'";
                     $result = $con->query($query);
-                    var_dump($result);
-                    echo $_REQUEST['department'];
+//                   var_dump($result);
+                    echo '以下是关于 "'.$_REQUEST['department'].' "的查询</br>';
                     while($row  = $result->fetch_assoc()){
                         echo $row['department']." ".$row['position']." ".$row['telephone'].'<br>';
                     }
