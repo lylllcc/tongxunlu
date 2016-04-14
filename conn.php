@@ -18,18 +18,29 @@
             <div class="form-horizontal" id="record">
                 <div class="form-group">
                     <?php
+                    require_once 'lib/my_spli.php';
 //                    header("Content-type: text/html; charset=utf-8");
                     $con = new mysqli("localhost","root","","adressbook");
                     if($con->connect_error){
                         die("connection error".$con->connect_error);
                     }
                     $con->set_charset("utf8");
-                    $query = "SELECT * FROM adressbooks WHERE department LIKE '%".$_REQUEST["department"]."%'";
+                    $spr = mb_str_split($_REQUEST['department']);//分解传来的搜索
+                    $spr = join("%",$spr);
+                    $spr = "'%".$spr."%'";
+                   $query = "SELECT * FROM adressbooks WHERE department LIKE ".$spr."OR sition LIKE".$spr;
+
                     $result = $con->query($query);
 //                   var_dump($result);
-                    echo '以下是关于 "'.$_REQUEST['department'].' "的查询</br>';
+                    $request = '以下是关于<font color="red"> "';
+                    $request .=$_REQUEST['department'];
+                    $request .='" </font> 的查询';
+                    echo $request;
+//                    echo '以下是关于 "'.$_REQUEST['department'].' "的查询</br>';
+//                    echo '<p class="navbar-text"><font color="red">213</font></p>';
+                    echo '<br>';
                     while($row  = $result->fetch_assoc()){
-                        echo $row['department']." ".$row['position']." ".$row['telephone'].'<br>';
+                        echo "部门：".$row['department']."  姓名或职位：".$row['sition']."  电话：".$row['telephone'].'<br>';
                     }
                     ?>
                 </div>
