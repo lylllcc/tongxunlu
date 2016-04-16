@@ -19,17 +19,9 @@
                 <div class="form-group">
                     <?php
                     require_once 'lib/my_spli.php';
+                    require_once 'lib/conn.php';
 //                    header("Content-type: text/html; charset=utf-8");
-                    $con = new mysqli("localhost","root","","adressbook");
-                    if($con->connect_error){
-                        die("connection error".$con->connect_error);
-                    }
-                    $con->set_charset("utf8");
-                    $spr = mb_str_split($_REQUEST['department']);//分解传来的搜索
-                    $spr = join("%",$spr);
-                    $spr = "'%".$spr."%'";
-                   $query = "SELECT * FROM adressbooks WHERE department LIKE ".$spr."OR sition LIKE".$spr;
-
+                    $query = "SELECT * FROM adressbooks WHERE department LIKE ".$spr."OR sition LIKE".$spr;
                     $result = $con->query($query);
 //                   var_dump($result);
                     $request = '以下是关于<font color="red"> "';
