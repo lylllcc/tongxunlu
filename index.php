@@ -29,19 +29,13 @@
                                     <button  class="btn btn-default">查询</button>
                                 </div>
                             </div>
-                            <?php
-                            require_once 'lib/my_spli.php';
-                            require_once 'lib/connect.php';
-                            $query = "SELECT * FROM adressbooks ";
-                            $result = $con->query($query);
-                            echo "<table border='1' align='center'><tr><td><b>部门</b></td><td><b>姓名或职位</b></td><td><b>电话</b></td></tr>";
-                            while($row  = $result->fetch_assoc()){
-//                                    echo "部门：".$row['department']."  姓名或职位：".$row['sition']."  电话：".$row['telephone'].'<br>';
-                                echo "<tr><td>".$row['department']."</td><td>".$row['sition']."</td><td>".$row['telephone']."</td>";
-                            }
-                            echo "</table>"
-                            ?>
                         </form>
+                            <?php
+                            require_once "lib/show.php";
+                            de();
+                            ?>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,5 +44,6 @@
             </footer>
         </div>
     </div>
+
 </body>
 </html>
