@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <?php
                     require_once 'lib/my_spli.php';
-                    require_once 'lib/conn.php';
+                    require_once 'lib/connect.php';
 //                    header("Content-type: text/html; charset=utf-8");
                     $query = "SELECT * FROM adressbooks WHERE department LIKE ".$spr."OR sition LIKE".$spr;
                     $result = $con->query($query);

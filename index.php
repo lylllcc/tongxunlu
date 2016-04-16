@@ -31,7 +31,7 @@
                             </div>
                             <?php
                             require_once 'lib/my_spli.php';
-                            require_once 'lib/conn.php';
+                            require_once 'lib/connect.php';
                             $query = "SELECT * FROM adressbooks ";
                             $result = $con->query($query);
                             echo "<table border='1' align='center'><tr><td><b>部门</b></td><td><b>姓名或职位</b></td><td><b>电话</b></td></tr>";
