@@ -12,7 +12,7 @@ function dd($de){
    //var_dump($result);
     echo "<table>";
     while($row = $result->fetch_assoc()){
-        echo "<tr><td>".$row['sition']."</td><td>".$row['telephone']."</td></tr>";
+        echo "<tr><td>".$row['sition']."</td><td>&nbsp&nbsp&nbsp&nbsp</td><td>".$row['telephone']."</td></tr>";
     }
     echo "</table>";
 }
@@ -23,12 +23,16 @@ function de(){
     //    var_dump($con);
     $result = $con->query($query);
 //    var_dump($result);
+    $temp = "";
     while($row = $result->fetch_assoc()){
-        $details = "<details><summary>".$row['department']."</summary>";
-        echo $details;
+        if($row['department']!=$temp){
+            $temp = $row['department'];
+            $details = "<table><tr><td><details><summary>".$row['department']."</summary>";
+            echo $details;
 //        dd(spr($row['department']));
-        dd($row['department']);
-        echo "</details>";
+            dd($row['department']);
+            echo "</details></td></tr></table>";
+        }
     }
 
 }
