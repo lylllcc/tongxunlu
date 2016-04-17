@@ -17,13 +17,14 @@ function dd($de){
     echo "</table>";
 }
 function de(){
-    $query = "SELECT * FROM adressbooks";
+    $query = "SELECT * FROM adressbooks ORDER BY val";
     $con = '';
     $con = connect($con);
-    //    var_dump($con);
+      // var_dump($con);
     $result = $con->query($query);
-//    var_dump($result);
+//   var_dump($result);
     $temp = "";
+    echo "<div align='center'>";
     while($row = $result->fetch_assoc()){
         if($row['department']!=$temp){
             $temp = $row['department'];
@@ -34,15 +35,16 @@ function de(){
             echo "</details></td></tr></table>";
         }
     }
+    echo "</div>";
 
 }
-//function spr($var){
-//    //处理模糊搜索
-//    $var = mb_str_split($var);
-//    $spr = join("%",$var);
-//    $spr = "'%".$spr."%'";
-//    return $spr;
-//}
+function spr($var){
+    //处理模糊搜索
+    $var = mb_str_split($var);
+    $spr = join("%",$var);
+    $spr = "'%".$spr."%'";
+    return $spr;
+}
 //function print_table(){
 //        require_once 'my_spli.php';
 //        require_once 'connect.php';

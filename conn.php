@@ -20,7 +20,11 @@
                     <?php
                     require_once 'lib/my_spli.php';
                     require_once 'lib/connect.php';
+                    require_once 'lib/show.php';
 //                    header("Content-type: text/html; charset=utf-8");
+                    $con="";
+                    $con=connect($con);
+                    $spr=spr($_REQUEST['department']);
                     $query = "SELECT * FROM adressbooks WHERE department LIKE ".$spr."OR sition LIKE".$spr;
                     $result = $con->query($query);
 //                   var_dump($result);
