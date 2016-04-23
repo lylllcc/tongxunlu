@@ -25,7 +25,7 @@
                     $con="";
                     $con=connect($con);
                     $spr=spr($_REQUEST['department']);
-                    $query = "SELECT * FROM adressbooks WHERE department LIKE ".$spr."OR sition LIKE".$spr;
+                    $query = "SELECT * FROM tongxunlu WHERE department LIKE ".$spr."OR sition LIKE".$spr;
                     $result = $con->query($query);
 //                   var_dump($result);
                     $request = '以下是关于<font color="red"> "';

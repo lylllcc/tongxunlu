@@ -3,7 +3,7 @@ require_once "my_spli.php";
 require_once "connect.php";
 //从数据库中获取数据并输出dd
 function dd($de){
-    $query = "SELECT * FROM adressbooks WHERE department LIKE '".$de."'";
+    $query = "SELECT * FROM tongxunlu WHERE department LIKE '".$de."'";
     $con = '';
     //echo $query;
     $con = connect($con);
@@ -17,7 +17,7 @@ function dd($de){
     echo "</table>";
 }
 function de(){
-    $query = "SELECT * FROM adressbooks ORDER BY val";
+    $query = "SELECT * FROM tongxunlu ORDER BY val";
     $con = '';
     $con = connect($con);
       // var_dump($con);
